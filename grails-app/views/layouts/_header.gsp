@@ -5,8 +5,7 @@
       <a class="navbar-brand" href="/">New Test App</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <li><a href="#">Photos</a></li>
+      <li class="active"><a href="/">Photos</a></li>
       <li><a href="#">Boards</a></li> 
     </ul>
     <ul class="nav navbar-nav navbar-right">
