@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="row"></div>
+			You have registered successfully. Please <a href="/login/auth">login</a>
 		</div>
 	</body>
 </html>
