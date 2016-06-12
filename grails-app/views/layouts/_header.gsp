@@ -6,7 +6,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="/">Photos</a></li>
-      <li><a href="#">Boards</a></li>
+      <li><a href="/public/boards">Boards</a></li>
       <li>
       <form class="form-horizontal" role="form" action="/"><div class="form-group">
 		      <div class="col-sm-10">

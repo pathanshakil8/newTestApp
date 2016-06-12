@@ -5,6 +5,7 @@
 		<title>Sign Up</title>
 	</head>
 	<body>
+		<div style="color: green;"><g:message code="${flash.message }"/></div>
 		<g:each in="${photos }" status="i" var="photo">
 			<g:if test="${i % 3 == 2 }">
 				<div class="row">
@@ -33,17 +34,51 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h4 class="modal-title">Modal Header</h4>
+		        <h4 class="modal-title">Select Board</h4>
 		      </div>
 		      <div class="modal-body">
-		        <p>Some text in the modal.</p>
-		      </div>
+		      <div class="row">
+		        <div class="col-sm-5">
+		        	<label for="sel1">Existing Board</label>
+				      <select class="form-control" id="sel1">
+				        
+				      </select>
+		        </div>
+		        <div class="col-sm-5"><input type="button" data-toggle="modal" data-target="#addNewBoard" class="btn btn-default" value="Add New Board" style="margin-top: 25px; margin-left: 100px;"></div>
+		      </div></div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		      </div>
 		    </div>
 		
 		  </div>
+		</div>
+		
+		
+		
+		<!-- Modal -->
+		<div id="addNewBoard" class="modal fade" role="dialog">
+		  <div class="modal-dialog modal-sm">
+		
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Enter Board Name</h4>
+		      </div>
+		      <form method="post" action="/public/saveBoard">
+		      <div class="modal-body">
+		      <div class="row">
+		        <div class="col-sm-6">
+		        	<input type="text" class="form-control" name="boardName">
+		        </div>
+		      <div class="modal-footer">
+		        <button type="submit" id="submitForm" class="btn btn-default">Submit</button>
+		      </div>
+		    </div>
+		
+		  </div>
+		  </form>
 		</div>
 		
 		
