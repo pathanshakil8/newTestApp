@@ -6,7 +6,12 @@ import grails.plugin.springsecurity.annotation.Secured
 class PublicController {
 
     def photos() {
-		List photos = Photo.list()
+		List photos = []
+		if(params.search) {
+			photos = Photo.findAllByTagIlike('%' + params.search + '%')
+		} else {
+			photos = Photo.list()
+		}
 		[photos: photos]
 	}
 }

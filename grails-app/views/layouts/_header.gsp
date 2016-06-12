@@ -6,7 +6,13 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="/">Photos</a></li>
-      <li><a href="#">Boards</a></li> 
+      <li><a href="#">Boards</a></li>
+      <li>
+      <form class="form-horizontal" role="form" action="/"><div class="form-group">
+		      <div class="col-sm-10">
+		        <input type="search" class="form-control" id="search" placeholder="Search Here..." name="search" style="margin-top: 8px;">
+		      </div>
+		    </div></form></li> 
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <sec:ifNotLoggedIn>
