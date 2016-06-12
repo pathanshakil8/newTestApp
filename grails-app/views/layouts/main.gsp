@@ -12,6 +12,7 @@
 		<asset:stylesheet src="bootstrap.min.css"/>
 		<asset:javascript src="jquery.min.js"/>
 		<asset:javascript src="bootstrap.min.js"/>
+		<asset:javascript src="script.js"/>
 	</head>
 	<body>
 		<g:render template="/layouts/header" />

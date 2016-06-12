@@ -14,7 +14,12 @@ class PublicController {
 		} else {
 			photos = Photo.list()
 		}
-		[photos: photos]
+		Set boards = []
+		def currentUser = springSecurityService.currentUser
+		if(currentUser) {
+			boards = currentUser.boards
+		}
+		[photos: photos, boards: boards]
 	}
 	
 	@Secured(['ROLE_USER'])
@@ -37,6 +42,17 @@ class PublicController {
 		currentUser.addToBoards(newBoard)
 		currentUser.save(flush: true)
 		flash.message = 'Board Added Successfully!'
+		redirect action: 'photos'
+	}
+	
+	@Secured(['ROLE_USER'])
+	def savePhotoToBoard() {
+		def currentUser = springSecurityService.currentUser
+		Board board = Board.findById(params.boardId)
+		Photo photo = Photo.findById(params.photoId)
+		board.addToPhotos(photo)
+		board.save(flush: true)
+		flash.message = 'Photo Added to Board Successfully!'
 		redirect action: 'photos'
 	}
 }
